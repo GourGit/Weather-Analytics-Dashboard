@@ -4,9 +4,7 @@ WeatherScope Pro is a modern weather analytics dashboard that provides live weat
 
 ## Live Site
 
-Live Demo: `https://weather-analytics-dashboard12.netlify.app/`
-
-> Replace the above placeholder with your deployed website link after hosting the project.
+Live Demo: [Weather Analytics Dashboard](https://weather-analytics-dashboard12.netlify.app/)
 
 ## Project Overview
 
