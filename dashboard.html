@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherScope Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Weather Animation Layer -->
+    <div class="weather-animation" id="weatherAnimation"></div>
+
+    <!-- Background Glow Animation -->
+    <div class="background-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-cloud-sun-rain"></i>
+                </div>
+
+                <div>
+                    <h2>WeatherScope</h2>
+                    <p>Analytics Dashboard</p>
+                </div>
+            </div>
+
+            <div class="search">
+                <input id="cityInput" placeholder="Search city...">
+
+                <button onclick="getWeather()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+            </div>
+
+            <div class="current-city-card">
+                <p>Current City</p>
+                <h3 id="cityName">Kolkata</h3>
+
+                <div class="weather-graphic">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <div class="topbar">
+                <div>
+                    <h1>Weather Overview</h1>
+                    <p>Live weather monitoring with smart insights</p>
+                </div>
+
+                <div class="status-badge">
+                    <span></span>
+                    Live Data
+                </div>
+            </div>
+
+            <!-- TOP CARDS -->
+            <section class="grid">
+
+                <div class="card weather-card">
+                    <div class="card-icon temp-icon">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+
+                    <div>
+                        <h4>Temperature</h4>
+                        <h1 id="temp">--°C</h1>
+                    </div>
+                </div>
+
+                <div class="card weather-card">
+                    <div class="card-icon humidity-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+                        <h4>Humidity</h4>
+                        <h1 id="humidity">--%</h1>
+                    </div>
+                </div>
+
+                <div class="card weather-card">
+                    <div class="card-icon wind-icon">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+
+                    <div>
+                        <h4>Wind</h4>
+                        <h1 id="wind">-- km/h</h1>
+                    </div>
+                </div>
+
+                <div class="card weather-card">
+                    <div class="card-icon aqi-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div>
+                        <h4>AQI</h4>
+                        <h1 id="aqi">--</h1>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- MAIN CHART + AI INSIGHT -->
+            <section class="layout">
+
+                <div class="chartBox glass-box">
+                    <div class="section-heading">
+                        <h3>Temperature Trend</h3>
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <canvas id="tempChart"></canvas>
+                </div>
+
+                <div class="insightBox glass-box">
+                    <div class="section-heading">
+                        <h3>AI Insight</h3>
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <p id="insight">
+                        Weather insights will appear here...
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- EXTRA ANALYTICS -->
+            <section class="analytics-section">
+
+                <div class="analytics-card">
+                    <div class="section-heading">
+                        <h3>Upcoming Temperature</h3>
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <canvas id="tempBarChart"></canvas>
+                </div>
+
+                <div class="analytics-card">
+                    <div class="section-heading">
+                        <h3>Weather Condition Split</h3>
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                    <canvas id="weatherPieChart"></canvas>
+                </div>
+
+                <div class="analytics-card">
+                    <div class="section-heading">
+                        <h3>Humidity & Wind Trend</h3>
+                        <i class="fa-solid fa-chart-area"></i>
+                    </div>
+
+                    <canvas id="humidityWindChart"></canvas>
+                </div>
+
+            </section>
+
+            <!-- DESCRIPTION -->
+            <section class="desc glass-box">
+                <div>
+                    <p>Weather Condition</p>
+                    <h3 id="description">--</h3>
+                </div>
+
+                <div class="desc-icon">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="../js/api.js"></script>
+    <script src="../js/charts.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
